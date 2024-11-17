@@ -3,9 +3,12 @@ def all_variants(text):
         yield ''
         return
 
-    for variant in all_variants(text[1:]):
+    first = text[0]
+    second = text[1:]
+
+    for variant in all_variants(second):
         yield variant
-        yield text[0] + variant
+        yield first + variant
 
 a = all_variants("abc")
 for i in a:
